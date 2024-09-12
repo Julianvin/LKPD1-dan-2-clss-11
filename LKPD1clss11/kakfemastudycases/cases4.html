@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action=""></form>
+        <label for="">Status ayah</label>
+        <div>
+            <label for="hidup">Masih Hidup</label>
+            <input type="radio" name="tipe" id="hidup" value="Ya" onclick="showHide(this)">
+        </div>
+        <div>
+            <label for="meninggal">Meninggal</label>
+            <input type="radio" name="tipe" id="meninggal" value="Tidak" onclick="showHide(this)">
+        </div>
+        <div>
+            <label for="tidak diketahui">Tidak Diketahui</label>
+            <input type="radio" name="tipe" id="tidak diketahui" value="gatau" onclick="showHide(this)">
+        </div>
+
+        <div class="block" style="display: block;" id="ayah-info">
+            <div class="">
+                <label for="">Pendidikan ayah:</label>
+                <select name="" id=""><option value="">value</option></select>
+            </div>
+            <div class="">
+                <label for="">Pekerjaan ayah:</label>
+                <select name="" id=""><option value="">value</option></select>
+            </div>
+            <div class="">
+                <label for="">Deskripsi pekerjaan ayah:</label>
+                <input type="text" name="" id="">
+            </div>
+            <div class="">
+                <label for="">Total Penghasilan ayah per bulan:</label>
+                <input type="number" name="" id="">
+            </div>
+            <div class="">
+                <label for="condition-label" id="condition-label">Detail ayah bekerja, berapa lama sudah bekerja, kondisi kesehatan, dan kondisi karir profesinya:</label>
+                <input type="text" name="" id="condition">
+            </div>
+        </div>
+
+        <script>
+            function showHide(e) {
+                document.getElementById('ayah-info').style.display = (e.value === 'Ya') ? 'block' : (e.value === 'Tidak') ? 'block' : 'none';
+
+                document.getElementById('condition-label').innerText = 
+                    (e.value === 'Tidak') ? 'Detail pekerjaan ayah semasa hidup:' : 
+                    'Detail ayah bekerja, berapa lama sudah bekerja, kondisi kesehatan, dan kondisi karir profesinya:';
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif ;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+        }
+
+        /* select:focus {
+            outline: none;
+            border-color: #007bff;
+        } */
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <label for="">Jenjang pendidikan:</label>
+            <select name="jenjang" id="jenjang" onchange="changeOption(this)">
+                <option value="SD">SD/Sederajat</option>
+                <option value="SMP">SMP/Sederajat</option>
+                <option value="SMA">SMA/Sederajat</option>
+            </select>
+            <div class="option" id="option">
+                <label for="">Tingkat sekolah atau perguruan tinggi:</label>
+                <select style="display: block;" name="tingkat-sd" id="tingkat-sd">
+                    <option value="SD1">1</option>
+                    <option value="SD2">2</option>
+                    <option value="SD3">3</option>
+                    <option value="SD4">4</option>
+                    <option value="SD5">5</option>
+                    <option value="SD6">6</option>
+                </select>
+                <select style="display: none;" name="tingkat-smp" id="tingkat-smp">
+                    <option value="SMP1">7</option>
+                    <option value="SMP2">8</option>
+                    <option value="SMP3">9</option>
+                </select>
+                <select style="display: none;" name="tingkat-sma" id="tingkat-sma">
+                    <option value="SMA1">10</option>
+                    <option value="SMA2">11</option>
+                    <option value="SMA3">12</option>
+                </select>
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        function changeOption(e) {
+            if (e.value === 'SD') {
+                document.getElementById('tingkat-sd').style.display = 'block';
+                document.getElementById('tingkat-smp').style.display = 'none';
+                document.getElementById('tingkat-sma').style.display = 'none';
+            } else if (e.value === 'SMP') {
+                document.getElementById('tingkat-sd').style.display = 'none';
+                document.getElementById('tingkat-smp').style.display = 'block';
+                document.getElementById('tingkat-sma').style.display = 'none';
+            } else if (e.value === 'SMA') {
+                document.getElementById('tingkat-sd').style.display = 'none';
+                document.getElementById('tingkat-smp').style.display = 'none';
+                document.getElementById('tingkat-sma').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
